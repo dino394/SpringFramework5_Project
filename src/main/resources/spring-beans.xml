@@ -18,4 +18,5 @@
 		<!-- setPrinter(new StringPrinter()) -->
 		<property name="printer" ref="strPrinter" />
 	</bean>
+	
 </beans>
