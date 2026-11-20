@@ -2,6 +2,8 @@ package myspring.di.annotation;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +13,10 @@ public class HelloBean {
 	//@Value <=> <property name="name" value="어노테이션" />
 	@Value("어노테이션")
 	String name;
+	
+	//@Autowired <=> <property name="printer" ref="stringPrinter" />
+	@Autowired
+	@Qualifier("stringPrinter")
 	PrinterBean printer;
 	
 	List<String> names;
