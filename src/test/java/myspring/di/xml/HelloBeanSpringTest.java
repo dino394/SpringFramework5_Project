@@ -9,6 +9,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import javax.annotation.Resource;
+
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = "classpath:spring-beans.xml")
 public class HelloBeanSpringTest {
@@ -18,6 +20,9 @@ public class HelloBeanSpringTest {
 	@Autowired
 	@Qualifier("helloCons")
 	Hello hello2;
+	
+	@Resource(name = "helloCons")
+	Hello hello3;
 	
 	@Test
 	void helloBean() {
