@@ -2,6 +2,8 @@ package myspring.di.annotation;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import javax.annotation.Resource;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +24,19 @@ public class AnnotatedHelloBeanTest {
 	@Qualifier("stringPrinter")
 	PrinterBean printer;
 	
+	@Resource(name = "stringPrinter")
+	PrinterBean printerResource;
+	
 	@Test
 	void hello( ) {
 		assertEquals("Hello 어노테이션", hello.sayHello());
 		hello.print();
+		
 		assertEquals("Hello 어노테이션", stringPrinter.toString());
+		
 		assertEquals("Hello 어노테이션", printer.toString());
+		
+		assertEquals("Hello 어노테이션", printerResource.toString());
+		
 	}
 }
