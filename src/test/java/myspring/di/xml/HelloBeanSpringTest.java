@@ -1,5 +1,6 @@
 package myspring.di.xml;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class HelloBeanSpringTest {
 	@Resource(name = "helloCons")
 	Hello hello3;
 	
-	@Test
+	@Test @Disabled
 	void helloBean() {
 		assertEquals("Hello 스프링", hello.sayHello());
 		
@@ -34,7 +35,12 @@ public class HelloBeanSpringTest {
 		
 		assertEquals("Hello 생성자", hello3.sayHello());
 		
-		hello2.print();
+		hello2.print();		
+	}
+	
+	@Test
+	void list() {
+		
 	}
 	
 }
