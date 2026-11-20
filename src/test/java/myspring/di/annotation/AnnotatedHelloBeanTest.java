@@ -39,7 +39,7 @@ public class AnnotatedHelloBeanTest {
 		
 	}	
 	
-	@Test @Disabled
+	@Test //@Disabled
 	void hello( ) {
 		assertEquals("Hello 어노테이션", hello.sayHello());
 		hello.print();
