@@ -31,6 +31,11 @@ public class AnnotatedHelloBeanTest {
 	@Autowired
 	HelloBeanCons helloCons;
 	
+	@Autowired
+	@Qualifier("consolePrinter")
+	PrinterBean printerCons;
+	
+	
 	@Test @Disabled
 	void hello( ) {
 		assertEquals("Hello 어노테이션", hello.sayHello());
