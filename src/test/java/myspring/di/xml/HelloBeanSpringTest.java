@@ -3,6 +3,7 @@ package myspring.di.xml;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -14,9 +15,15 @@ public class HelloBeanSpringTest {
 	@Autowired
 	Hello hello;
 	
+	@Autowired
+	@Qualifier("helloCons")
+	Hello hello2;
+	
 	@Test
 	void helloBean() {
 		assertEquals("Hello 스프링", hello.sayHello());
+		
+		assertEquals("Hello 생성자", hello2.sayHello());
 	}
 	
 }
